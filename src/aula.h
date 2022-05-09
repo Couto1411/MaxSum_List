@@ -25,7 +25,7 @@ typedef struct Lista{
 //Bloco maxSumPos;
 
 void FLVazia(Lista *l);
-void preencheLista(Lista *l,char f[80]);
+void preencheLista(Lista *l);
 void maiorSoma(Lista *l);
 void printLista(Lista *l);
 void printCodon(Bloco *b,int cont);

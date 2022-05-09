@@ -7,7 +7,12 @@ void FLVazia(Lista *l){
     // diz que o proximo item depois do ultimo é nulo
     l->cauda->prox=NULL;
 }
-void preencheLista(Lista *l,char arquivo[80]){
+void preencheLista(Lista *l){
+	char arquivo[80];
+	fgets(arquivo,80,stdin);
+	printf("Qual o nome do arquivo da lista dos numeros? (Max 80)\n");
+	fgets(arquivo,80,stdin);
+	arquivo[strlen(arquivo)-1]='\0';
     FILE *f;
     int item;
     Item aux;
