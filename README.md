@@ -57,15 +57,18 @@ Obs.:
 - Ao iniciar o programa deve-se entrar com alguma palavra que não será utilizada, isso é feito para que seja possível entrar com outro arquivo durante a execução do programa
 # Exemplo de execução
 Arquivos:
+
 <p align="center">
-	<img src="imgs/Numeros"/> 
-    <img src="imgs/Novos_Numeros"/> 
+	<img src="imgs/numeros.jpg"/> 
+	<img src="imgs/Novos_Numeros.jpg"/> 
 </p> 
 
 Execução:
 <p align="center">
-	<img src="imgs/Exemplo_exec_1"/> 
-    <img src="imgs/Exemplo_exec_2"/> 
+	<img src="imgs/Exemplo_exec_1.jpg"/> 
+</p>
+<p align="center">
+	<img src="imgs/Exemplo_exec_2.jpg"/> 
 </p> 
 
 # Compilação e Execução
