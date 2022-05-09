@@ -9,7 +9,7 @@
 
 typedef struct Bloco Bloco;
 typedef struct Item{
-    char value;
+    int value;
 }Item;
 
 struct Bloco{
@@ -22,12 +22,11 @@ typedef struct Lista{
     Bloco* cauda;
 }Lista;
 
-Bloco maxCodon;
+//Bloco maxSumPos;
 
 void FLVazia(Lista *l);
 void preencheLista(Lista *l,char f[80]);
-int maiorCodon(Lista *l,Lista *codon);
+void maiorSoma(Lista *l);
 void printLista(Lista *l);
-int tamanhoLista(Lista *l);
-void printCodon(Bloco *b,int cont,Lista *codon);
+void printCodon(Bloco *b,int cont);
 #endif

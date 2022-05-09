@@ -9,30 +9,19 @@ void FLVazia(Lista *l){
 }
 void preencheLista(Lista *l,char arquivo[80]){
     FILE *f;
-    char nucleotideo;
+    int item;
     Item aux;
     if(!(f=fopen(arquivo,"r"))){
         printf("Erro ao abrir arquivo.\n");
         exit(1);
     }
-    fseek(f,0,SEEK_END);
-    fseek(f, -1, SEEK_CUR);
-    nucleotideo=fgetc(f);
-    if(nucleotideo!='-'){
-        fclose(f);
-        f=fopen(arquivo,"a");
-        fputc('-',f);
-    }
-    fclose(f);
-    f=fopen(arquivo,"r");
-    nucleotideo=fgetc(f);
-    while(nucleotideo!='-'){
+    while(!feof (f)){
+        fscanf(f,"%d",&item);
         l->cauda->prox=(Bloco*)malloc(sizeof(Bloco));
         l->cauda=l->cauda->prox;
-        aux.value=nucleotideo;
+        aux.value=item;
         l->cauda->dado=aux;
         l->cauda->prox=NULL;
-        nucleotideo=fgetc(f);
     }
     fclose(f);
 }
@@ -41,71 +30,50 @@ void printLista(Lista *l){
     aux=l->cabeca;
     while (aux->prox!=NULL)
     {
-        printf("%c-",aux->prox->dado.value);
+        printf("%d-",aux->prox->dado.value);
         aux=aux->prox;
     }
     printf("\n");
 }
-int maiorCodon(Lista *l, Lista *codon){
-    Bloco *percorre, *remove, *aux;
-    int cont=0,max=0;
-    percorre=l->cabeca;
-    aux=codon->cabeca;
-    while (percorre->prox!=NULL&&percorre->prox->prox!=NULL&&percorre->prox->prox->prox!=NULL){
-        cont=0;
-        remove=percorre->prox;
-        while (remove!=NULL)
-        {
-            if (remove->dado.value==aux->prox->dado.value)
-            {
-                if (aux->prox==codon->cauda)
-                    aux=codon->cabeca;
-                else
-                    aux=aux->prox;
-                remove=remove->prox;
-                cont+=1;
-            }
-            else
-            {
-                aux=codon->cabeca;
-                break;
-            }
+void maiorSoma(Lista *l){
+    Bloco *percorre, *percorreInterno;
+    int soma=0,maxSum;
+    //int cont=1,contmax=1;
+    percorre=l->cabeca->prox;
+    maxSum=percorre->dado.value;
+    //maxSumPos=*percorre;
+    while (percorre!=NULL){
+        soma=percorre->dado.value;
+        //cont=1;
+        if (soma>maxSum){
+            //maxSumPos=*percorre;
+            //contmax=cont;
+            maxSum=soma;
         }
-        cont=cont-(cont%tamanhoLista(codon));
-        if (cont%tamanhoLista(codon)==0)
+        percorreInterno=percorre->prox;
+        while (percorreInterno!=NULL)
         {
-            if (cont>max){
-                max=cont;
-                maxCodon=*percorre;
-            }                
-            for (int i = 1; i < ((tamanhoLista(codon)/3)*(cont/(tamanhoLista(codon)))); i++){
-                if(percorre->prox->prox->prox!=NULL)
-                    percorre=percorre->prox->prox->prox;
+            soma+=percorreInterno->dado.value;
+            if (soma>maxSum){
+                //contmax+=cont;
+                maxSum=soma;
             }
+            //cont+=1;    
+            percorreInterno=percorreInterno->prox;
         }
-        if(percorre->prox->prox->prox!=NULL)
-            percorre=percorre->prox->prox->prox;
+        percorre=percorre->prox;
     }
-    return max;
+    printf("%d\n",maxSum);
+    //return contmax;
 }
-int tamanhoLista(Lista *l){
-    Bloco* aux;
-    int cont=0;
-    aux=l->cabeca;
-    while (aux->prox!=NULL){
-        cont+=1;
-        aux=aux->prox;
-    }
-    return cont;
-}
-void printCodon(Bloco *b,int cont,Lista *codon){
-    Bloco* aux;
-    aux=b;
-    printf("O maior codon possui %d repeticoes:\n",cont/tamanhoLista(codon));
-    for (int i = 0; i < cont; i++)
-    {
-        printf("%c",aux->prox->dado.value);
-        aux=aux->prox;
-    }
-    printf("\n");
-}
+// void printPos(Bloco *b,int cont){
+//     Bloco* aux;
+//     aux=b;
+//     for (int i = 0; i < cont; i++)
+//     {
+//         printf("%d-",aux->dado.value);
+//         aux=aux->prox;
+//     }
+//     printf("\n");
+// }
+//Comentários são tentativas de criar uma função para mostrar a posição dos componentes da máxima soma

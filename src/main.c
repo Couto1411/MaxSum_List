@@ -1,35 +1,29 @@
 #include "aula.h"
 
 int main(){
-	Lista l,codon;
+	Lista l;
 	char arquivo[80];
-	int opcao,max=0;
+	int opcao;
 	FLVazia(&l);
-	printf("Qual o nome do arquivo da cadeia principal? (Max 80)\n");
+	printf("Qual o nome do arquivo da lista dos numeros? (Max 80)\n");
 	fgets(arquivo,80,stdin);
 	arquivo[strlen(arquivo)-1]='\0';
 	preencheLista(&l,arquivo);
-	FLVazia(&codon);
-	printf("Qual o nome do arquivo da cadeia que deseja buscar? (Max 80)\n");
-	fgets(arquivo,80,stdin);
-	arquivo[strlen(arquivo)-1]='\0';
-	preencheLista(&codon,arquivo);
 	do
 	{
-		printf("O que deseja fazer?\n\t1-Buscar Maior Codon\n\t2-Imprimir cadeia principal\n\t3-Imprimir cadeia de busca\n\t0-Sair\n");
+		printf("O que deseja fazer?\n\t1-Buscar Maior Soma\n\t2-Imprimir lista\n\t0-Sair\n");
 		scanf("%d",&opcao);
 		switch (opcao)
 		{
 		case 1:
-			max=maiorCodon(&l,&codon);
-			printCodon(&maxCodon,max,&codon);
+			maiorSoma(&l);
 			break;
 		case 2:
 			printLista(&l);
 			break;
-		case 3:
-			printLista(&codon);
-			break;
+		// case 3:
+		// 	printPos(&maxSumPos, cont);
+		// 	break;
 		case 0:
 			printf("Saindo\n");
 			break;
