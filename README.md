@@ -55,6 +55,18 @@ percorrendo o mesmo (caso válido, caso inválido da exit) e inserindo elementos
 Obs.:    
 - O arquivo deve ser dado na mesma maneira que o apresentado e deve conter apenas números inteiros
 - Ao iniciar o programa deve-se entrar com alguma palavra que não será utilizada, isso é feito para que seja possível entrar com outro arquivo durante a execução do programa
+# Exemplo de execução
+Arquivos:
+<p align="center">
+	<img src="imgs/Numeros"/> 
+    <img src="imgs/Novos_Numeros"/> 
+</p> 
+
+Execução:
+<p align="center">
+	<img src="imgs/Exemplo_exec_1"/> 
+    <img src="imgs/Exemplo_exec_2"/> 
+</p> 
 
 # Compilação e Execução
 
