@@ -7,7 +7,7 @@ int main(){
 	preencheLista(&l);
 	do
 	{
-		printf("O que deseja fazer?\n\t1-Buscar Maior Soma\n\t2-Imprimir lista\n\t0-Sair\n");
+		printf("O que deseja fazer?\n\t1-Buscar Maior Soma\n\t2-Imprimir lista\n\t3-Busca Novo Arquivo\n\t0-Sair\n");
 		scanf("%d",&opcao);
 		switch (opcao)
 		{
