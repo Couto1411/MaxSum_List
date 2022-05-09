@@ -40,16 +40,16 @@ Existe uma lista dinâmica **l** da maneira (Baseado de : [vide git](https://git
 percorrendo o mesmo (caso válido, caso inválido da exit) e inserindo elementos na lista, a primeira ação a ser realizada é reservar espaço em memória para esse novo dado. Para isso, o apontador cauda deve apontar em memória para o endereço do novo bloco cujo prox apontará para NULL.
 
 3) A seguir é apresentado um menu para o usuário com as seguintes opções:    
-- Buscar Maior Soma:
-    1. O programa seta uma ponteiro *percorre* igual ao primeiro elemento da lista (l->cabeca->prox), seta tamebém a máxima soma da lista como o valor desse elemento, entra-se então em um loop que irá igualar *percorre=percorre->prox* a cada iteração enquanto *percorre* não for nulo (uma maneira de percorre a lista), para compararmos cada soma de cada intervalo de posições, usamos uma variável *soma* temporária, e no começo do loop a igualamos ao valor de percorre e comparamos à máxima soma, caso seja maior, igualamos a máxima soma a *soma*, logo após setamos um ponteiro *percorreInterno=percorre->prox* e começamos um loop interno da mesma maneira do externo que soma o valor de *percorreInterno* à variável *soma* e a compara novamente à máxima soma, caso seja maior substitui o valor da máxima soma pela *soma*. Ao final dos loops a máxima soma é imprimida;    
+- 1- Buscar Maior Soma:
+    1. O programa seta uma ponteiro *percorre* igual ao primeiro elemento da lista (l->cabeca->prox), seta também a máxima soma da lista como o valor desse elemento, entra-se então em um loop que irá igualar *percorre=percorre->prox* a cada iteração enquanto *percorre* não for nulo (uma maneira de percorrer a lista), para compararmos cada soma de cada intervalo de posições, usamos uma variável *soma* temporária, e no começo do loop a igualamos ao valor de percorre e comparamos à máxima soma, caso seja maior, igualamos a máxima soma a *soma*, logo após setamos um ponteiro *percorreInterno=percorre->prox* e começamos um loop interno da mesma maneira do externo que soma o valor de *percorreInterno* à variável *soma* e a compara novamente à máxima soma, caso seja maior substitui o valor da máxima soma pela *soma*. Ao final dos loops a máxima soma é imprimida;    
 
-- Imprimir lista:
+- 2- Imprimir lista:
     1. Imprime a lista de inteiros obtidos no arquivo;
 
-- Busca Novo Arquivo:
+- 3- Busca Novo Arquivo:
     1. Repete *1)* e *2)* para pegar um valor de uma nova lista; 
 
-- Sair:
+- 0- Sair:
     1. Sair do programa.
 
 Obs.:    
