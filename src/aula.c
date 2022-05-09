@@ -35,7 +35,7 @@ void printLista(Lista *l){
     aux=l->cabeca;
     while (aux->prox!=NULL)
     {
-        printf("%d-",aux->prox->dado.value);
+        printf(" %d, ",aux->prox->dado.value);
         aux=aux->prox;
     }
     printf("\n");
